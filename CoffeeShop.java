@@ -16,7 +16,14 @@ public class CoffeeShop {
             switch (choice) {
                 case 1:
                     //add product
-                    Product.addProduct();
+                    // Product.addProduct();
+                    Product newProduct = new Product(1, "coffee", 5, "M", "Cold");
+                    // Product.changeProductPrice( 1);
+                    // Product.productList.add(newProduct);
+                    
+                    // Product.productList.element().addProduct();
+
+
                     break;
                 case 2:
                     Product.displayProducts();

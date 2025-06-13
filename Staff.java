@@ -17,7 +17,7 @@ public class Staff {
     int workingExperience; // in years, e.g., 5, 10
     String bankAccountNumber; // 123456789, 987654321
     double salary; // 50000.0, 60000.0
-    String password;
+    private String password;
     int id=1;
 
     //create staff
@@ -40,11 +40,16 @@ public class Staff {
         this.salary = salary;
         this.password = password;
     }
+
+
     //create staff with email and password only
     public Staff(String email, String password) {
         this.email = email;
         this.password = password;
     }
+
+    //registerNewStaff
+    //changeBirthday
 
     
 
