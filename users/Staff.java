@@ -1,3 +1,4 @@
+package users;
 import java.sql.Date;
 import java.time.Year;
 
@@ -47,6 +48,20 @@ public class Staff {
         this.email = email;
         this.password = password;
     }
+
+
+
+    @Override
+    public boolean equals(Object obj) {
+        
+        Staff other = (Staff) obj;
+        if (this.email.equals(other.email) && this.password.equals(other.password)) {
+            return true;
+        }
+        return false;
+    }
+
+    
 
     //registerNewStaff
     //changeBirthday
