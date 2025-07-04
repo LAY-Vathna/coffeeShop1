@@ -2,8 +2,9 @@ package users;
 //member
 
 import java.sql.Date;
+import mInterface.*;
 
-public class Customer {
+public class Customer implements Authentication{
     int customer_id;
     String customer_name;
     int customer_age;
@@ -34,5 +35,17 @@ public class Customer {
         this.address = address;
     }
 
+    
+    @Override
+    public void login(String email, String password) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void register()
+    {
+
+    }
     
 }

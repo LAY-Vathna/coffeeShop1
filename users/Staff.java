@@ -2,8 +2,10 @@ package users;
 import java.sql.Date;
 import java.time.Year;
 
-public class Staff {
-    int staff_id; // 1, 2, 3
+import mInterface.Authentication;
+
+public class Staff implements Authentication {
+    private int staff_id; // 1, 2, 3
     String staff_name; // "John Doe", "Jane Smith"
     String staff_role; // "Manager", "Developer"
     String staff_photo; // "photo1.jpg", "photo2.png"
@@ -50,7 +52,6 @@ public class Staff {
     }
 
 
-
     @Override
     public boolean equals(Object obj) {
         
@@ -60,6 +61,23 @@ public class Staff {
         }
         return false;
     }
+
+
+    @Override
+    public void login(String email, String password) {
+        // TODO Auto-generated method stub
+        
+    }
+
+
+    @Override
+    public void register() {
+        // TODO Auto-generated method stub
+        
+    }
+
+
+    
 
     
 
