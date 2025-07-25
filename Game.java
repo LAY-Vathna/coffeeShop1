@@ -1,17 +1,45 @@
 
 
 import example.GrandWizard;
-import example.Hero;
+
+import java.util.ArrayList;
+
+import example.Dude;
 import example.Wizard;
 
 public class Game {
     public static void main(String[] args) {
 
-        Wizard wizard1 = new Wizard("Gandalf", 10000000);
+        Dude dude1 = new Dude("Gandalf");
+        Wizard wizard1 = new Wizard("Merlin", 50);
+        GrandWizard grandWizard1 = new GrandWizard("Saruman", 100, 5);
+        wizard1.castSpell("Fireball");
+
+        
+        String s = new String("Hello");
+        System.out.println(s);
+        System.out.println(dude1);
         System.out.println(wizard1);
 
-        // Hero hero1 = new Hero();
-        // hero1.name = "Hero1";
+        ArrayList<Dude> dudeList = new ArrayList<>();
+        dudeList.add(dude1);
+        dudeList.add(wizard1);
+        dudeList.add(grandWizard1);
+
+
+        // for (Dude dude : dudeList) {
+        //     if (dude instanceof GrandWizard) {
+        //         System.out.println("Grandwizard");
+        //     }else if(dude instanceof Wizard) {
+        //         System.out.println("wizard");
+        //     }else
+        //     {
+        //         System.out.println("Dude");
+        //     }
+        // }
+
+        // Dude hero1 = new Dude("Aragorn");
+        // System.out.println(hero1);
 
         // Hero hero2 = new Hero();
         // hero2.name = "Hero2";

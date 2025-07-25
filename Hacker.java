@@ -1,8 +1,8 @@
 
 
-import example.Hero;
+import example.Dude;
 
-public class Hacker extends Hero {
+public class Hacker extends Dude {
 
     public Hacker(String name) {
         super(name);

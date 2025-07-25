@@ -13,7 +13,12 @@ public class GrandWizard extends Wizard{
     @Override
     public void sayName() {
         // TODO Auto-generated method stub
-        System.out.println("Grand Wizard: " + name);
+        System.out.println("Grand Wizard: " + this.getName() + ", Level: " + level);
     }
     
+    public void castAdvanceSpell()
+    {
+        System.out.println("Casting an advanced spell!");
+        this.setMp(this.getMp() - 20); // Casting an advanced spell costs 20 MP
+    }
 }

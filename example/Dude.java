@@ -1,22 +1,17 @@
 package example;
 
-public class Hero {
+public class Dude {
     private String name;
     private int mp = 0;
     private int hp = 100;
 
-    public Hero(String name) {
+    
+    public Dude(String name) {
         this.name = name;
         this.hp = 100;
     }
-    
 
-    public void sayName()
-    {
-        System.out.println("Hero: "+ name);
-    }
-
-    public void attack(Hero target)
+    public void attack(Dude target)
     {
         System.out.println(name + " attacks " + target.name);
         target.hp = target.hp - 10;
@@ -63,6 +58,13 @@ public class Hero {
         }
     }
 
-
+    public void sayName() {
+        System.out.println("Dude: " + this.name);
+    } 
+      
+     @Override
+    public String toString() {
+        return "Hero name=" + name +", hp=" + hp;
+    }
     
 }
