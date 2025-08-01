@@ -11,20 +11,31 @@ public class Game {
     public static void main(String[] args) {
 
         Dude dude1 = new Dude("Gandalf");
-        Wizard wizard1 = new Wizard("Merlin", 50);
-        GrandWizard grandWizard1 = new GrandWizard("Saruman", 100, 5);
-        wizard1.castSpell("Fireball");
+        //account
+
+        Wizard wizard1 = new Wizard("Gandalf", 50);
+        //employee
+         Wizard wizard2 = new Wizard("Gandalf", 50);
+        //employee
+        GrandWizard grandWizard1 = new GrandWizard("Gandalf", 50, 5);
+
+        Dude dude2 = new Dude("Gandalf");
+        
+        System.out.println(dude1.equals(wizard1));
+        System.out.println(wizard1.equals(dude1));
+        // GrandWizard grandWizard1 = new GrandWizard("Saruman", 100, 5);
+        // wizard1.castSpell("Fireball");
 
         
-        String s = new String("Hello");
-        System.out.println(s);
-        System.out.println(dude1);
-        System.out.println(wizard1);
+        // String s = new String("Hello");
+        // System.out.println(s);
+        // System.out.println(dude1);
+        // System.out.println(wizard1);
 
-        ArrayList<Dude> dudeList = new ArrayList<>();
-        dudeList.add(dude1);
-        dudeList.add(wizard1);
-        dudeList.add(grandWizard1);
+        // ArrayList<Dude> dudeList = new ArrayList<>();
+        // dudeList.add(dude1);
+        // dudeList.add(wizard1);
+        // dudeList.add(grandWizard1);
 
 
         // for (Dude dude : dudeList) {

@@ -7,8 +7,8 @@ public class Dude {
 
     
     public Dude(String name) {
-        this.name = name;
-        this.hp = 100;
+        setName(name);
+        setHp(100);
     }
 
     public void attack(Dude target)
@@ -54,7 +54,7 @@ public class Dude {
             System.out.println("HP must be between 0 and 100");
         }else
         {
-            this.hp = hp;
+            this.hp = 100;
         }
     }
 
@@ -64,7 +64,35 @@ public class Dude {
       
      @Override
     public String toString() {
-        return "Hero name=" + name +", hp=" + hp;
+        return "Player name=" + name +", hp=" + hp;
     }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if(obj instanceof Dude) {
+            Dude other = (Dude) obj;
+            if(this.name.equals(other.name) && this.hp == other.hp)
+            {
+                return true;
+            }
+            else
+            {
+                System.out.println(this.name + this.hp);
+                System.out.println(other.name + other.hp);
+                System.out.println("hi");
+                return false;
+            }
+        }else
+        {
+            
+                System.out.println("hii");
+            return false;
+        }
+    }
+
+    
     
 }

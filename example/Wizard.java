@@ -5,12 +5,12 @@ import java.util.ArrayList;
 
 
 public class Wizard extends Dude{
-    ArrayList<String> spells = new ArrayList<>();
+    protected ArrayList<String> spells = new ArrayList<>();
     
     public Wizard(String name, int mp) {
         super(name); // Call the Hero constructor with default values
         this.setHp(mp);
-        spells.add("Fireball");
+        spells.add( "Fireball");
         spells.add("Lightning Bolt");
     }
 
@@ -31,5 +31,18 @@ public class Wizard extends Dude{
         return super.toString()+ "Wizard [spells=" + spells + "]";
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if(obj instanceof Wizard) {
+            Wizard other = (Wizard) obj;
+            if(super.equals(obj) && this.spells.equals(((Wizard)obj).spells)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    public boolean equals(Dude obj) {
+        return super.equals(obj);
+    }
     
 }
