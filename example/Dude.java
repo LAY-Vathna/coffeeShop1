@@ -1,6 +1,6 @@
 package example;
 
-public class Dude {
+public abstract class Dude implements SpellCaster{
     private String name;
     private int mp = 0;
     private int hp = 100;
@@ -10,6 +10,12 @@ public class Dude {
         setName(name);
         setHp(100);
     }
+    // @Override
+    // public void castSpell(String name) {
+    //     // TODO Auto-generated method stub
+    //     System.out.println(name + " casts a spell!");
+    // }
+    public abstract void castSpell(String name);
 
     public void attack(Dude target)
     {
@@ -62,7 +68,7 @@ public class Dude {
         System.out.println("Dude: " + this.name);
     } 
       
-     @Override
+    @Override
     public String toString() {
         return "Player name=" + name +", hp=" + hp;
     }
@@ -80,15 +86,10 @@ public class Dude {
             }
             else
             {
-                System.out.println(this.name + this.hp);
-                System.out.println(other.name + other.hp);
-                System.out.println("hi");
                 return false;
             }
         }else
         {
-            
-                System.out.println("hii");
             return false;
         }
     }

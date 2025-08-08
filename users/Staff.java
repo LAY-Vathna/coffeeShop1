@@ -1,89 +1,62 @@
 package users;
-import java.sql.Date;
-import java.time.Year;
 
-import mInterface.Authentication;
+public class Staff extends Account{
 
-public class Staff implements Authentication {
-    private int staff_id; // 1, 2, 3
-    String staff_name; // "John Doe", "Jane Smith"
-    String staff_role; // "Manager", "Developer"
-    String staff_photo; // "photo1.jpg", "photo2.png"
-    String email;
-    String phoneNumber; //012123456, 011121314
-    int age;
-    Date dob;
-    String working_shift;// "Morning", "Evening", "Night"
-    char staff_gender; // "M" or "F" or "O" for other
-    String address; // "123 Main St", "456 Elm St"
-    Date dateOfJoining; // "2023-01-01", "2022-05-15"
-    int workingExperience; // in years, e.g., 5, 10
-    String bankAccountNumber; // 123456789, 987654321
-    double salary; // 50000.0, 60000.0
-    private String password;
-    int id=1;
+    private String role;
+    private float salary;
 
-    //create staff
-    public Staff(String staff_name, String staff_role, String email, String phoneNumber, Date dob, String working_shift,
-            char staff_gender, String address, Date dateOfJoining, int workingExperience, String bankAccountNumber,
-            double salary, String password) {
-        this.staff_id = id++;
-        this.staff_name = staff_name;
-        this.staff_role = staff_role;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
-        this.dob = dob;
-        this.age = Year.now().getValue() - dob.toLocalDate().getYear(); // Calculate age from DOB
-        this.working_shift = working_shift;
-        this.staff_gender = staff_gender;
-        this.address = address;
-        this.dateOfJoining = dateOfJoining;
-        this.workingExperience = workingExperience + (Year.now().getValue() - dateOfJoining.toLocalDate().getYear());
-        this.bankAccountNumber = bankAccountNumber;
-        this.salary = salary;
-        this.password = password;
+    public Staff(String name, String email, String password, String phoneNumber, String role, float salary) {
+        super(name, email, password, phoneNumber);
+        setRole(role);
+        setSalary(salary);
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        // Validate role if needed
+        if (role == null || role.isEmpty()) {
+            System.out.println("Role cannot be empty.");
+            this.role = "Staff";
+        } else {
+            this.role = role;
+        }
+    }
+
+    public float getSalary() {
+        return salary;
+    }
+
+    public void setSalary(float salary) {
+        // Validate salary if needed
+        if (salary < 200 || salary > 10000) {
+            System.out.println("Salary cannot be negative.");
+            this.salary = 200;
+        } else {
+            this.salary = salary;
+        }
     }
 
 
-    //create staff with email and password only
-    public Staff(String email, String password) {
-        this.email = email;
-        this.password = password;
-    }
 
+    
+    @Override
+    public String toString() {
+        return super.toString()+"Staff [role=" + role + ", salary=" + salary + "]";
+    }
 
     @Override
     public boolean equals(Object obj) {
-        
-        Staff other = (Staff) obj;
-        if (this.email.equals(other.email) && this.password.equals(other.password)) {
-            return true;
+        if(super.equals(obj)) {
+            Staff other = (Staff) obj;
+            if(this.role.equals(other.role) && this.salary == other.salary) {
+                return true;
+            }
         }
         return false;
     }
-
-
-    @Override
-    public void login(String email, String password) {
-        // TODO Auto-generated method stub
-        
-    }
-
-
-    @Override
-    public void register() {
-        // TODO Auto-generated method stub
-        
-    }
-
-
-    
-
-    
-
-    //registerNewStaff
-    //changeBirthday
-
     
 
     

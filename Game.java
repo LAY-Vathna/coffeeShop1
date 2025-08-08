@@ -11,6 +11,7 @@ public class Game {
     public static void main(String[] args) {
 
         Dude dude1 = new Dude("Gandalf");
+        Dude dude2 = new Wizard("Gandalf", 50);
         //account
 
         Wizard wizard1 = new Wizard("Gandalf", 50);

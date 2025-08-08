@@ -1,7 +1,19 @@
 package mInterface;
 
+import users.Account;
+
 public interface Authentication {
 
-    void register();
-    void login(String email, String password);
+    public abstract void register();
+    
+    public static boolean login(Account account)
+    {
+        for (Account acc : Account.accountList) {
+            if (account.equals(acc)) {
+                return true;
+            }
+            
+        }
+        return false;
+    }
 }

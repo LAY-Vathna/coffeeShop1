@@ -4,7 +4,7 @@ package example;
 import java.util.ArrayList;
 
 
-public class Wizard extends Dude{
+public class Wizard extends Dude  {
     protected ArrayList<String> spells = new ArrayList<>();
     
     public Wizard(String name, int mp) {
@@ -20,6 +20,8 @@ public class Wizard extends Dude{
         System.out.println(name + " casts a spell!");
         this.setMp(this.getMp() - 10); // Casting a spell costs 10 MP
     }
+
+
     @Override
     public void sayName() {
         // TODO Auto-generated method stub
