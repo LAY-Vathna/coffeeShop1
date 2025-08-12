@@ -25,12 +25,13 @@ public class Customer extends Account{
             this.passcode = passcode;
         }
     }
+    
     public int getLoyaltyPoints() {
         return loyaltyPoints;
     }
 
     public void setLoyaltyPoints(int loyaltyPoints) {
-        if (loyaltyPoints < 0) {
+        if (loyaltyPoints < 0 || loyaltyPoints > 100) {
             System.out.println("Loyalty points cannot be negative.");
             this.loyaltyPoints = 0;
         } else {

@@ -2,6 +2,7 @@ package mInterface;
 
 import users.Account;
 
+@FunctionalInterface
 public interface Authentication {
 
     public abstract void register();
