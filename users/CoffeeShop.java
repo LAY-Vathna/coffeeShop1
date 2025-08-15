@@ -8,7 +8,7 @@ import java.util.Scanner;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-import org.w3c.dom.Node;
+import com.mysql.cj.MysqlConnection;
 
 import mInterface.Authentication;
 
@@ -26,41 +26,45 @@ import mInterface.Authentication;
 public class CoffeeShop {
     public static void main(String[] args) {
 
-        JFrame firstFrame = new JFrame();
-        firstFrame.setTitle("Coffee Shop");
+        MySQLConnection.getConnection();
 
-        firstFrame.setSize(500, 500);
-        firstFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        firstFrame.setLayout(null);
+        MySQLConnection.closeConnection();
 
-        JButton button = new JButton("Click Me1");
-        button.setBounds(0, 0, 100, 50);
-        button.setBackground(Color.pink);
-        button.addActionListener(e->
-        {
-            System.out.println("Button 1 clicked");
-        });
+        // JFrame firstFrame = new JFrame();
+        // firstFrame.setTitle("Coffee Shop");
 
-        // ButtonListener buttonListener = new ButtonListener();
+        // firstFrame.setSize(500, 500);
+        // firstFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        // firstFrame.setLayout(null);
+
+        // JButton button = new JButton("Click Me1");
+        // button.setBounds(0, 0, 100, 50);
+        // button.setBackground(Color.pink);
+        
+        // // ButtonListener buttonListener = new ButtonListener();
         // button.addActionListener(buttonListener);
         
 
-        JButton button2 = new JButton("Click Me2");
-        button2.setBounds(0, 100, 100, 50);
-        button2.setBackground(Color.YELLOW);
+        // button.addActionListener(e->
+        // {
+        //     System.out.println("Button 1 clicked");
+        // });
+        // JButton button2 = new JButton("Click Me2");
+        // button2.setBounds(0, 100, 100, 50);
+        // button2.setBackground(Color.YELLOW);
 
-        button2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                 System.out.println("Button 2 clicked");
-            }
-        });
+        // button2.addActionListener(new ActionListener() {
+        //     @Override
+        //     public void actionPerformed(ActionEvent e) {
+        //          System.out.println("Button 2 clicked");
+        //     }
+        // });
 
 
 
-        firstFrame.add(button);
-        firstFrame.add(button2);
-        firstFrame.setVisible(true);
+        // firstFrame.add(button);
+        // firstFrame.add(button2);
+        // firstFrame.setVisible(true);
         // Calculator sum = (a, b) -> a + b;
         // Calculator sub = (a, b) -> a - b;
         // Calculator mul = (a, b) -> a * b;
