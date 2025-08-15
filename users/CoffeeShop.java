@@ -2,9 +2,12 @@ package users;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
 
+import javax.naming.spi.DirStateFactory.Result;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
@@ -23,10 +26,45 @@ import mInterface.Authentication;
 //     public abstract int calculate(int a, int b);
 // }
 
+//Authentication, login, register, view, edit
+
 public class CoffeeShop {
     public static void main(String[] args) {
-
+        Scanner scanner = new Scanner(System.in);
         MySQLConnection.getConnection();
+        System.out.println("input author name: ");
+        String name = scanner.nextLine();
+        System.out.println("input author bio: ");
+        String bio = scanner.nextLine();
+       
+        String insertString = "INSERT INTO author (userName, bio) VALUES ('" + name + "', '" + bio + "')";
+        int result = MySQLConnection.executeUpdate(insertString);
+        if(result > 0) {
+            System.out.println("Author inserted successfully.");
+        } else {
+            System.out.println("Failed to insert author.");
+        }
+        // ArrayList<Author> list = new ArrayList<>();
+
+        
+        // System.out.println(MySQLConnection.executeUpdate("update author set userName = 'soriyong' where id = 1"));
+        // ResultSet rs = MySQLConnection.executeQuery("SELECT * FROM author");
+        // try {
+        //     while (rs.next()) {
+        //         int id = rs.getInt("id");
+        //         String userName = rs.getString("userName");
+        //         String bio = rs.getString("bio");
+        //         Author a1 = new Author(id, userName, bio);
+        //         list.add(a1);
+        //     }
+        // } catch (Exception e) {
+        //     e.printStackTrace();
+        // }
+
+        // for (Author author : list) {
+        //     System.out.println(author);
+        // }
+        
 
         MySQLConnection.closeConnection();
 

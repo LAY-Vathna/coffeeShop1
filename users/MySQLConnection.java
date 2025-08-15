@@ -5,13 +5,12 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-
 import java.sql.ResultSet;
 
 public class MySQLConnection {
 
     private static Connection connection = null;
-    private static final String URL = "jdbc:mysql://localhost:3306/comic";
+    private static final String URL = "jdbc:mysql://localhost:3306/comic"; // Change to your database URL
     private static final String USERNAME = "root";
     private static final String PASSWORD = "root";
 
